@@ -1,7 +1,7 @@
 {
   "expo": {
     "name": "mainZone",
-    "slug": "mainZone",
+    "slug": "mainzone",
     "version": "1.0.0",
     "orientation": "portrait",
     "icon": "./assets/images/icon.png",
@@ -39,6 +39,13 @@
     "experiments": {
       "typedRoutes": true,
       "reactCompiler": true
-    }
+    },
+    "extra": {
+      "router": {},
+      "eas": {
+        "projectId": "eb67673a-528f-4bef-adf2-eb4efda5ac7a"
+      }
+    },
+    "owner": "emmy23"
   }
 }
