@@ -1,6 +1,6 @@
 import { globalStyles } from "@/styles/global";
 import React from "react";
-import { ScrollView, StyleSheet, Text } from "react-native";
+import { ScrollView, Text } from "react-native";
 
 export default function MealScreen() {
   return (
@@ -9,5 +9,3 @@ export default function MealScreen() {
     </ScrollView>
   );
 }
-
-const styles = StyleSheet.create({});
