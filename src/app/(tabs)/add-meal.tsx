@@ -1,12 +1,11 @@
-import HomeHeader from "@/components/HomeHeader";
 import { globalStyles } from "@/styles/global";
+import React from "react";
 import { Text, View } from "react-native";
 
-export default function Index() {
+export default function AddMealScreen() {
   return (
     <View style={globalStyles.container}>
-      <Text style={globalStyles.title}>Mainzone</Text>
-      <HomeHeader />
+      <Text style={globalStyles.title}>Add Meal</Text>
     </View>
   );
 }
