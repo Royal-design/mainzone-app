@@ -1,16 +1,31 @@
 import HomeHeader from "@/components/HomeHeader";
 import MacroGrid from "@/components/MacroGrid";
 import RecentMeals from "@/components/RecentMeals";
+import { getMeals, type Meal } from "@/storage/meal";
 import { globalStyles } from "@/styles/global";
+import { useFocusEffect } from "expo-router";
+import { useCallback, useState } from "react";
 import { ScrollView, Text } from "react-native";
 
 export default function HomeScreen() {
+  const [meals, setMeals] = useState<Meal[]>([]);
+  const loadMeals = async () => {
+    const data = await getMeals();
+    setMeals(data);
+    console.log("loaded meals", data);
+  };
+
+  useFocusEffect(
+    useCallback(() => {
+      loadMeals();
+    }, []),
+  );
   return (
     <ScrollView style={globalStyles.container}>
       <Text style={globalStyles.title}>Mainzone</Text>
       <HomeHeader />
       <MacroGrid />
-      <RecentMeals />
+      <RecentMeals meals={meals} />
     </ScrollView>
   );
 }
